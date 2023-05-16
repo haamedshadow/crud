@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+
+  --max-width: 1200px;
+  --border-radius: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--primary));
+}
+
+@layer keyframes {
+  @keyframes rgb {
+    0% {
+      background-position: 0% 50%;
+      transform: rotate(0deg) translateX(-20%);
+    }
+    50% {
+      background-position: 100% 50%;
+      transform: rotate(180deg) translateX(20%);
+    }
+    100% {
+      background-position: 0% 50%;
+      transform: rotate(360deg) translateX(-20%);
+    }
+  }
+}
