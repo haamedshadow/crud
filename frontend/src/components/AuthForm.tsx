@@ -16,18 +16,19 @@ type Props = {
   type: string
 }
 
-
 const AuthForm = ({ type }: Props) => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [confirmPassword, setConfirmPassword] = useState("")
+
   const router = useRouter()
+
   const [createUser, { data, loading, error }] = useMutation<
     CreateUserData,
     CreateUserVariables
   >(UserOperations.Mutations.createUser)
 
-  console.log("here is data: ", data, loading, error)
+  console.log("🚀 ~ ", data, loading, error)
 
   const onSubmit = async () => {
     if (type === "signin") {
@@ -53,7 +54,8 @@ const AuthForm = ({ type }: Props) => {
   return (
     <Card
       color="transparent"
-      shadow={false}
+      shadow={true}
+      className="p-5 shadow-xl"
     >
       <Typography
         variant="h4"
